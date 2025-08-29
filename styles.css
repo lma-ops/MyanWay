@@ -1,0 +1,228 @@
+    :root {
+            --myanmar-gold: #FFD700;
+            --myanmar-green: #005B5C;
+            --myanmar-beige: #F5F5DC;
+            --myanmar-dark: #2F4F4F;
+            --myanmar-red: #DC143C;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: var(--myanmar-beige);
+            color: var(--myanmar-dark);
+            line-height: 1.6;
+        }
+        
+        .menu-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1001;
+            background: var(--myanmar-gold);
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+        }
+        
+        .hidden-menu {
+            position: fixed;
+            top: 0;
+            right: -300px;
+            width: 300px;
+            height: 100vh;
+            background: var(--myanmar-green);
+            transition: right 0.3s ease;
+            z-index: 1000;
+            padding-top: 60px;
+        }
+        
+        .hidden-menu.active {
+            right: 0;
+        }
+        
+        .hidden-menu ul {
+            list-style: none;
+        }
+        
+        .hidden-menu li {
+            margin: 20px 0;
+        }
+        
+        .hidden-menu a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px 20px;
+            display: block;
+            transition: background 0.3s;
+        }
+        
+        .hidden-menu a:hover {
+            background: var(--myanmar-gold);
+            color: var(--myanmar-dark);
+        }
+        
+        .section {
+            display: none;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .section.active {
+            display: block;
+        }
+        
+        #landing {
+            position: relative;
+            height: 100vh;
+            background: linear-gradient(rgba(0,91,92,0.7), rgba(0,91,92,0.7));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+        
+        .hero-content h1 {
+            font-size: 3rem;
+            color: var(--myanmar-gold);
+            margin-bottom: 20px;
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            color: white;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            background: var(--myanmar-gold);
+            color: var(--myanmar-dark);
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn:hover {
+            background: #FFA500;
+            transform: translateY(-2px);
+        }
+        
+        .map-container {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .map-image {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .destination-marker {
+            position: absolute;
+            background: var(--myanmar-red);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: bold;
+        }
+        
+        .destination-marker:hover {
+            background: var(--myanmar-gold);
+            color: var(--myanmar-dark);
+            transform: scale(1.1);
+        }
+        
+        .marker-kalaw { top: 45%; left: 25%; }
+        .marker-bagan { top: 35%; left: 45%; }
+        .marker-yangon { top: 70%; left: 50%; }
+        
+        .hotel-grid, .transport-grid, .guide-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .hotel-card, .transport-card, .guide-card {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+        
+        .hotel-card:hover, .transport-card:hover, .guide-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .price {
+            color: var(--myanmar-red);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .booking-form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        .selected-destination, .selected-hotel, .selected-transport {
+            background: var(--myanmar-green);
+            color: white;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .destination-marker {
+                padding: 6px 10px;
+                font-size: 12px;
+            }
+            
+            .hotel-grid, .transport-grid, .guide-grid {
+                grid-template-columns: 1fr;
+            }
+        }
